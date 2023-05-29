@@ -5,7 +5,7 @@ Adding RGPD compliance to Wordpress with a simple plug-in.
 
 
 ### Usage 
-Modifie the code to match you prefference refer to [https:// ](https://tarteaucitron.io/) for documentations 
+Modifie the code to match you prefference refer to [tarteaucitron.io](https://tarteaucitron.io/) for documentations 
 
 
 
