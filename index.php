@@ -93,10 +93,7 @@ function tarteAuCitron() {
         // Facebook Pixel
         tarteaucitron.user.facebookpixelId = 'YOUR-ID'; tarteaucitron.user.facebookpixelMore = function () { /* add here your optionnal facebook pixel function */ };
         (tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel');
-
-        // Facebook 
-        (tarteaucitron.job = tarteaucitron.job || []).push('facebook');
-        
+      
         //Matomo 
         tarteaucitron.user.matomoId = SITE_ID;
         (tarteaucitron.job = tarteaucitron.job || []).push('matomocloud');
