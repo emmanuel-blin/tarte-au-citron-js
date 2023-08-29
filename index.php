@@ -2,18 +2,20 @@
 
 /**
  * Plugin Name: Tarte Au Citron (RGPD)
- * Plugin URI: https://tarteaucitron.io/fr/install/
+ * Plugin URI: https://github.com/emmanuel-blin/tarte-au-citron-js
  * Description: Plug-in ajout du script Tarte au Citron JS, pour la réglementation RGPD
+ * Requires at least: 5.0
+ * Requires PHP: 5.6
  * Version: 1.3.1
  * Author: E.Blin
  * Author URI: https://b-link.xyz
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * GitHub Plugin URI: https://github.com/emmanuel-blin/tarte-au-citron-js
  */
 
-
-
+ if ( ! defined( 'ABSPATH' ) ) {
+   exit; // Exit if accessed directly
+}
 
 function tarteAuCitron() {
    ?>
