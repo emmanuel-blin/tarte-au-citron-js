@@ -20,6 +20,11 @@
    exit; // Exit if accessed directly
 }
 
+// Add GitHub Updater to the plugin
+if (!class_exists('GitHub_Updater')) {
+    require_once(plugin_dir_path(__FILE__) . 'github-updater.php');
+}
+
 function tarteAuCitron() {
    ?>
    <!-- Add Cookie Compliance with TarteauxcitronJS  -->
@@ -108,4 +113,22 @@ function tarteAuCitron() {
 }
 
 add_action('wp_head', 'tarteAuCitron');
+
+// Initialize the GitHub Updater
+add_action('init', function () {
+    $config = array(
+        'slug' => plugin_basename(__FILE__),
+        'proper_folder_name' => 'tarte-au-citron-js',
+        'api_url' => 'https://api.github.com/repos/emmanuel-blin/tarte-au-citron-js',
+        'raw_url' => 'https://raw.github.com/emmanuel-blin/tarte-au-citron-js/main',
+        'github_url' => 'https://github.com/emmanuel-blin/tarte-au-citron-js',
+        'zip_url' => 'https://github.com/emmanuel-blin/tarte-au-citron-js/archive/main.zip',
+        'sslverify' => true,
+        'requires' => '5.0',
+        'tested' => '5.8',
+        'readme' => 'README.md',
+        'access_token' => '',
+    );
+    new GitHub_Updater($config);
+});
 ?>
