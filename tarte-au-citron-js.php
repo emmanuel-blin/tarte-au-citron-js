@@ -6,7 +6,7 @@
  * Description: Plug-in ajout du script Tarte au Citron JS, pour la réglementation RGPD
  * Requires at least: 5.0
  * Requires PHP: 5.6
- * Version: 1.3.1
+ * Version: 1.3.2
  * Author: E.Blin
  * Author URI: https://b-link.xyz
  * License: GPL-2.0+
@@ -18,11 +18,6 @@
 
  if ( ! defined( 'ABSPATH' ) ) {
    exit; // Exit if accessed directly
-}
-
-// Add GitHub Updater to the plugin
-if (!class_exists('GitHub_Updater')) {
-    require_once(plugin_dir_path(__FILE__) . 'github-updater.php');
 }
 
 function tarteAuCitron() {
@@ -114,21 +109,5 @@ function tarteAuCitron() {
 
 add_action('wp_head', 'tarteAuCitron');
 
-// Initialize the GitHub Updater
-add_action('init', function () {
-    $config = array(
-        'slug' => plugin_basename(__FILE__),
-        'proper_folder_name' => 'tarte-au-citron-js',
-        'api_url' => 'https://api.github.com/repos/emmanuel-blin/tarte-au-citron-js',
-        'raw_url' => 'https://raw.github.com/emmanuel-blin/tarte-au-citron-js/main',
-        'github_url' => 'https://github.com/emmanuel-blin/tarte-au-citron-js',
-        'zip_url' => 'https://github.com/emmanuel-blin/tarte-au-citron-js/archive/main.zip',
-        'sslverify' => true,
-        'requires' => '5.0',
-        'tested' => '5.8',
-        'readme' => 'README.md',
-        'access_token' => '',
-    );
-    new GitHub_Updater($config);
-});
+
 ?>
