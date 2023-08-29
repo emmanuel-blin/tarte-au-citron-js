@@ -12,6 +12,8 @@
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * GitHub Plugin URI: emmanuel-blin/tarte-au-citron-js
+ * GitHub Branch: main
+ * Text Domain: tarte-au-citron-rgpd
  */
 
  if ( ! defined( 'ABSPATH' ) ) {
