@@ -4,7 +4,7 @@
  * Plugin Name: Tarte Au Citron (RGPD)
  * Plugin URI: https://tarteaucitron.io/fr/install/
  * Description: Plug-in ajout du script Tarte au Citron JS, pour la réglementation RGPD
- * Version: 1.2
+ * Version: 1.3
  * Author: E.Blin
  * Author URI: https://b-link.xyz
  * License: GPL-2.0+
@@ -17,11 +17,11 @@
 function tarteAuCitron() {
    ?>
    <!-- Add Cookie Compliance with TarteauxcitronJS  -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tarteaucitronjs/1.11.0/tarteaucitron.js" integrity="sha512-bDyrKjNycnlzdeKsBI4TOHhiDmAx9LtNkZo/IfdLZGlzYTREqmAdvgHy876IOBfZ7UUq7mIz4t4ZHoG8w/xTdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/tarteaucitronjs/1.14.0/tarteaucitron.js"></script>
 
-      <script type="text/javascript">
+<script type="text/javascript">
         tarteaucitron.init({
-    	  "privacyUrl": "", /* Privacy policy url */
+    	  "privacyUrl": "<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>", /* Privacy policy url */
           "bodyPosition": "bottom", /* or top to bring it as first element for accessibility */
 
     	  "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
@@ -30,6 +30,7 @@ function tarteAuCitron() {
     	  "orientation": "middle", /* Banner position (top - bottom) */
        
           "groupServices": false, /* Group services by category */
+          "showDetailsOnClick": true, /* Click to expand the description */
           "serviceDefaultState": "wait", /* Default state (true - wait - false) */
                            
     	  "showAlertSmall": false, /* Show the small banner on bottom right */
@@ -39,7 +40,7 @@ function tarteAuCitron() {
 
           "showIcon": true, /* Show cookie icon to manage cookies */
           //"iconSrc": "", /* Optionnal: URL or base64 encoded image */
-          "iconPosition": "BottomRight", /* BottomRight, BottomLeft, TopRight and TopLeft */
+          "iconPosition": "BottomLeft", /* BottomRight, BottomLeft, TopRight and TopLeft */
 
     	  "adblocker": false, /* Show a Warning if an adblocker is detected */
                            
